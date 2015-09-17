@@ -1,5 +1,23 @@
 <ion-view view-title="Search">
   <ion-content>
-    <h1>Search</h1>
+    <div class="list list-inset">
+      <form>
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input ng-click='showLocation()' ng-model='search.restaurant' type="text" placeholder="Search...">
+        </label>
+        <label ng-if='showLoc' class="item item-input">
+          <input ng-model='search.location' type="text" placeholder="Location...">
+        </label>
+        <button ng-click='search(search.restaurant, search.location)' class="button button-block button-calm">
+          Search
+        </button>
+      </form>
+    </div>
+    <div><b>I am allergic to...</b></div>
+    <ion-checkbox ng-model="search.glutenChecked">Gluten</ion-checkbox>
+    <ion-checkbox ng-model="search.dairyChecked">Dairy</ion-checkbox>
+    <ion-checkbox ng-model="search.soyChecked">Soy</ion-checkbox>
+    <ion-checkbox>Semen</ion-checkbox>
   </ion-content>
 </ion-view>

@@ -1,0 +1,9 @@
+<ion-view view-title="Results">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-click="showDetails()" ng-repeat="restaurant in results">
+        <b>{{ restaurant.count + ". " + restaurant.name }}</b>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
