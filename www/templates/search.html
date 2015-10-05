@@ -9,7 +9,7 @@
         <label ng-if='showLoc' class="item item-input">
           <input ng-model='search.location' type="text" placeholder="Location...">
         </label>
-        <button ng-click='search(search.restaurant, search.location)' class="button button-block button-calm">
+        <button ng-click='search(search.restaurant, search.location, search.glutenChecked, search.dairyChecked, search.soyChecked)' class="button button-block button-calm">
           Search
         </button>
       </form>

@@ -72,12 +72,15 @@ angular.module('starter.controllers', [])
 .service('yelpRequest', function($http){
   // point context at the same yelpRequest object which 'this' is pointing at
   var context = this;
-  context.search = function(restaurant, location){
+  context.search = function(restaurant, location, gluten, dairy, soy){
     // returns a promise so that the next promise will be executed
     return $http.get('http://localhost:8080/yelp', {
       params: {
         restaurant: restaurant,
-        location: location
+        location: location,
+        gluten: gluten,
+        dairy: dairy,
+        soy: soy
       }
     })
     .then(function(res){
@@ -90,11 +93,11 @@ angular.module('starter.controllers', [])
 .controller('SearchCtrl', 
   ['$scope', '$http', '$location', '$state', 'yelpRequest', function ($scope, $http, $location, $state, yelpRequest) {
 
-  $scope.search = function(restaurant, location){
+  $scope.search = function(restaurant, location, gluten, dairy, soy){
     //console.log($scope.search.glutenChecked);
 
     //perform API call to get info that we can render on searchPage
-    yelpRequest.search(restaurant, location)
+    yelpRequest.search(restaurant, location, gluten, dairy, soy)
     .then(function(res){
       //clear all the fields NOT WORKING
       $scope.search.restaurant = null;
