@@ -84,12 +84,7 @@ angular.module('starter.controllers', [])
       context.search.results = res.data.businesses;
       console.log('SCOPE.SEARCH.RESULTS', context.search.results);
 
-      // //clear all the fields NOT WORKING
-      // context.search.restaurant = null;
-      // context.search.location = null;
-      // context.search.glutenChecked = null;
-      // context.search.dairyChecked = null;
-      // context.search.soyChecked = null;
+
     })
   }
 })
