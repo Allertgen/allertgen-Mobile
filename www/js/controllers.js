@@ -83,11 +83,10 @@ angular.module('starter.controllers', [])
     .then(function(res){
       context.search.results = res.data.businesses;
       console.log('SCOPE.SEARCH.RESULTS', context.search.results);
-
-
     })
   }
 })
+
 .controller('SearchCtrl', 
   ['$scope', '$http', '$location', '$state', 'yelpRequest', function ($scope, $http, $location, $state, yelpRequest) {
 
